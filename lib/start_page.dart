@@ -10,16 +10,17 @@ class StartPage extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                stops: [0.1, 0.5, 0.7, 0.9],
-                colors: [
-                  Colors.indigo[800],
-                  Colors.red[700],
-                  Colors.indigo[600],
-                  Colors.indigo[500],
-                ],
-                tileMode: TileMode.repeated),
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              stops: [0.1, 0.5, 0.7, 0.9],
+              colors: [
+                Colors.indigo[800],
+                Colors.red[700],
+                Colors.indigo[600],
+                Colors.indigo[500],
+              ],
+              tileMode: TileMode.repeated,
+            ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

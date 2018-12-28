@@ -1,0 +1,12 @@
+{
+    "questions": [
+        {"text": "Some question text", "answer": 0},
+        {"text": "Some question text", "answer": 1},
+        {"text": "Some question text", "answer": 1},
+        {"text": "Some question text", "answer": 0},
+        {"text": "Some question text", "answer": 0},
+        {"text": "Some question text", "answer": 1},
+        {"text": "Some question text", "answer": 0},
+        {"text": "Some question text", "answer": 0}
+    ]
+}

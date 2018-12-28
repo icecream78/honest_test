@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './themes.dart';
 import './start_page.dart';
+import './question_page.dart';
 
 void main() {
   runApp(HonestTestApp());
@@ -26,7 +27,7 @@ class HonestTestApp extends StatelessWidget {
 
           case '/questions':
             return MaterialPageRoute(
-              builder: (_) => StartPage(),
+              builder: (_) => QuestionPage(),
               settings: settings,
             );
         }
