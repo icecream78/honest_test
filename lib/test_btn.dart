@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-ButtonTheme createTestBtn({String text = 'Lets begin'}) {
+ButtonTheme createTestBtn({
+  String text = 'Lets begin',
+  @required VoidCallback onPressed,
+}) {
   return ButtonTheme(
     minWidth: 100.0,
     height: 50.0,
@@ -17,9 +20,7 @@ ButtonTheme createTestBtn({String text = 'Lets begin'}) {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      onPressed: () {
-        print('btn');
-      },
+      onPressed: onPressed,
     ),
   );
 }
