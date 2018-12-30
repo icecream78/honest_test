@@ -8,6 +8,7 @@ class StartPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
+          width: double.infinity, // full width widget
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topRight,
@@ -16,7 +17,7 @@ class StartPage extends StatelessWidget {
               colors: [
                 Colors.indigo[800],
                 Colors.red[700],
-                Colors.indigo[600],
+                Colors.indigo[400],
                 Colors.indigo[500],
               ],
               tileMode: TileMode.repeated,
