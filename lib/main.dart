@@ -19,7 +19,7 @@ class HonestTestApp extends StatelessWidget {
       home: StartPage(),
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
-          case '/login':
+          case '/start':
             return MaterialPageRoute(
               builder: (_) => StartPage(),
               settings: settings,

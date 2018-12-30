@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import './test_btn.dart';
+import './custom_btn.dart';
+import 'package:flutter/foundation.dart';
 
 class QuestionPage extends StatefulWidget {
   @override
@@ -34,6 +35,7 @@ class QuestionPageState extends State<QuestionPage> {
   Question _currQuestion = Question();
   int _currQuestionNum = 1;
   int _totalQuestionCount = 1;
+  int _totalRightAnswers = 0;
   bool successLoad = true;
 
   @override
@@ -51,6 +53,19 @@ class QuestionPageState extends State<QuestionPage> {
       if (successLoad) {
         _currQuestion = questionList[0];
       }
+    });
+  }
+
+  void answerSelectedHandler({@required Answers selectedAnswer}) {
+    if (_currQuestionNum == _totalQuestionCount) {
+      // TODO: add navigation to result page
+      return print('Its over');
+    }
+
+    setState(() {
+      _currQuestionNum += 1;
+      _currQuestion = _questions[_currQuestionNum - 1];
+      _totalRightAnswers += selectedAnswer == Answers.yes ? 1 : 0;
     });
   }
 
@@ -122,7 +137,11 @@ class QuestionPageState extends State<QuestionPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(right: 15.0),
-                      child: createTestBtn(text: 'Try again'),
+                      child: CustomRoundButton(
+                        text: 'Try again',
+                        onPressed: () =>
+                            Navigator.pushReplacementNamed(context, '/start'),
+                      ),
                     )
                   ],
                 ),
@@ -147,8 +166,16 @@ class QuestionPageState extends State<QuestionPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      createTestBtn(text: 'Yeap'),
-                      createTestBtn(text: 'Nope'),
+                      CustomRoundButton(
+                        text: 'Yeap',
+                        onPressed: () =>
+                            answerSelectedHandler(selectedAnswer: Answers.yes),
+                      ),
+                      CustomRoundButton(
+                        text: 'Nope',
+                        onPressed: () =>
+                            answerSelectedHandler(selectedAnswer: Answers.no),
+                      ),
                     ],
                   ),
                 ),
