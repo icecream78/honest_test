@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import './test_btn.dart';
+import './custom_btn.dart';
 import 'package:flutter/foundation.dart';
 
 class QuestionPage extends StatefulWidget {
@@ -137,7 +137,7 @@ class QuestionPageState extends State<QuestionPage> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(right: 15.0),
-                      child: createTestBtn(
+                      child: CustomRoundButton(
                         text: 'Try again',
                         onPressed: () =>
                             Navigator.pushReplacementNamed(context, '/start'),
@@ -166,12 +166,12 @@ class QuestionPageState extends State<QuestionPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      createTestBtn(
+                      CustomRoundButton(
                         text: 'Yeap',
                         onPressed: () =>
                             answerSelectedHandler(selectedAnswer: Answers.yes),
                       ),
-                      createTestBtn(
+                      CustomRoundButton(
                         text: 'Nope',
                         onPressed: () =>
                             answerSelectedHandler(selectedAnswer: Answers.no),
