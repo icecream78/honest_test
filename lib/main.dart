@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './themes.dart';
-import './start_page.dart';
-import './question_page.dart';
-import './finish_page.dart';
+import './pages/start_page.dart';
+import './pages/question/question_page.dart';
+import './pages/finish_page.dart';
 
 void main() {
   runApp(HonestTestApp());

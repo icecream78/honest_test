@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './custom_btn.dart';
+import '../components/custom_btn.dart';
+import '../themes.dart';
 
 class FinishPage extends StatelessWidget {
   @override
@@ -8,20 +9,7 @@ class FinishPage extends StatelessWidget {
       body: Center(
         child: Container(
           width: double.infinity, // full width widget
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              stops: [0.1, 0.5, 0.7, 0.9],
-              colors: [
-                Colors.indigo[800],
-                Colors.red[700],
-                Colors.indigo[400],
-                Colors.indigo[500],
-              ],
-              tileMode: TileMode.repeated,
-            ),
-          ),
+          decoration: appGradientBg,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -30,10 +18,7 @@ class FinishPage extends StatelessWidget {
                 child: Text(
                   'Test results',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context).textTheme.headline,
                 ),
               ),
               Padding(
@@ -49,10 +34,7 @@ class FinishPage extends StatelessWidget {
                     'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
                     maxLines: 40,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.body2,
                   ),
                 ),
               ),

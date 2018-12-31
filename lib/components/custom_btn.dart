@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 const Color defaultBorderColor = Color(0xFF90CAF9);
+const TextStyle defaultTextStyle = TextStyle(
+  fontSize: 20.0,
+  color: Colors.white,
+);
 
 class CustomRoundButton extends RaisedButton {
   final String text;
@@ -8,6 +12,7 @@ class CustomRoundButton extends RaisedButton {
   final Color color;
   final double minWidth;
   final double borderRadius;
+  final TextStyle textStyle;
 
   CustomRoundButton({
     this.text = 'Click me',
@@ -15,6 +20,7 @@ class CustomRoundButton extends RaisedButton {
     this.color = defaultBorderColor,
     this.minWidth = 100.0,
     this.borderRadius = 10.0,
+    this.textStyle = defaultTextStyle,
   });
 
   @override
@@ -27,10 +33,11 @@ class CustomRoundButton extends RaisedButton {
         color: Colors.green,
         child: Text(
           text,
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.white,
-          ),
+          // style: TextStyle(
+          //   fontSize: 20.0,
+          //   color: Colors.white,
+          // ),
+          style: textStyle,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
