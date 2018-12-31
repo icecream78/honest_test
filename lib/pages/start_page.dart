@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './custom_btn.dart';
+import '../components/custom_btn.dart';
+import '../themes.dart';
 
 void main() => runApp(StartPage());
 
@@ -10,20 +11,7 @@ class StartPage extends StatelessWidget {
       body: Center(
         child: Container(
           width: double.infinity, // full width widget
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              stops: [0.1, 0.5, 0.7, 0.9],
-              colors: [
-                Colors.indigo[800],
-                Colors.red[700],
-                Colors.indigo[400],
-                Colors.indigo[500],
-              ],
-              tileMode: TileMode.repeated,
-            ),
-          ),
+          decoration: appGradientBg,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[

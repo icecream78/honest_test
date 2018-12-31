@@ -2,32 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import './custom_btn.dart';
 import 'package:flutter/foundation.dart';
+import './utils.dart';
+import '../../components/custom_btn.dart';
+import '../../themes.dart';
 
 class QuestionPage extends StatefulWidget {
   @override
   State createState() => QuestionPageState();
-}
-
-enum Answers { yes, no }
-
-class Question {
-  String text;
-  Answers answer;
-
-  Question({this.text = '', this.answer = Answers.no});
-
-  Answers _convertJSONAnswer({int answer = 0}) {
-    return answer == 0 ? Answers.yes : Answers.no;
-  }
-
-  Question.fromJson(Map<String, dynamic> question, {int questionNum = 0}) {
-    text = question.containsKey('text') ? question['text'] : '';
-    answer = _convertJSONAnswer(
-      answer: question.containsKey('answer') ? question['answer'] : 0,
-    );
-  }
 }
 
 class QuestionPageState extends State<QuestionPage> {
@@ -87,20 +69,7 @@ class QuestionPageState extends State<QuestionPage> {
       body: Center(
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              stops: [0.1, 0.5, 0.7, 0.9],
-              colors: [
-                Colors.indigo[800],
-                Colors.red[700],
-                Colors.indigo[400],
-                Colors.indigo[500],
-              ],
-              tileMode: TileMode.repeated,
-            ),
-          ),
+          decoration: appGradientBg,
           child: Theme(
             data: ThemeData(
               brightness: Brightness.dark,
@@ -126,10 +95,7 @@ class QuestionPageState extends State<QuestionPage> {
                           padding: EdgeInsets.only(left: 15.0),
                           child: Text(
                             '$_currQuestionNum/$_totalQuestionCount',
-                            style: TextStyle(
-                              fontSize: 25.0,
-                              color: Colors.white,
-                            ),
+                            style: Theme.of(context).textTheme.body1,
                           ),
                         ),
                       ],
