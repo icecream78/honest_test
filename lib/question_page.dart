@@ -58,8 +58,7 @@ class QuestionPageState extends State<QuestionPage> {
 
   void answerSelectedHandler({@required Answers selectedAnswer}) {
     if (_currQuestionNum == _totalQuestionCount) {
-      // TODO: add navigation to result page
-      return print('Its over');
+      Navigator.pushReplacementNamed(context, '/finish');
     }
 
     setState(() {

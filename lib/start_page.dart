@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './custom_btn.dart';
 
 void main() => runApp(StartPage());
 
@@ -27,35 +28,22 @@ class StartPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: 80.0),
-              ),
-              Image.asset(
-                'assets/logo.jpg',
+                padding: EdgeInsets.only(top: 80.0),
+                child: Image.asset(
+                  'assets/logo.jpg',
+                ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 60.0),
-              ),
-              ButtonTheme(
-                minWidth: 250.0,
-                height: 50.0,
-                child: OutlineButton(
-                  color: Colors.green,
-                  // splashColor: Colors.teal,
-                  textColor: Colors.white,
-                  child: Text(
-                    'Lets begin',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/questions');
-                  },
+                padding: EdgeInsets.only(top: 70.0),
+                child: CustomRoundButton(
+                  color: Colors.white,
+                  text: 'Lets begin',
+                  minWidth: 250.0,
+                  borderRadius: 30.0,
+                  onPressed: () =>
+                      Navigator.pushReplacementNamed(context, '/questions'),
                 ),
-              )
+              ),
             ],
           ),
         ),

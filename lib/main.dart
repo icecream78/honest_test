@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './themes.dart';
 import './start_page.dart';
 import './question_page.dart';
+import './finish_page.dart';
 
 void main() {
   runApp(HonestTestApp());
@@ -28,6 +29,12 @@ class HonestTestApp extends StatelessWidget {
           case '/questions':
             return MaterialPageRoute(
               builder: (_) => QuestionPage(),
+              settings: settings,
+            );
+
+          case '/finish':
+            return MaterialPageRoute(
+              builder: (_) => FinishPage(),
               settings: settings,
             );
         }
