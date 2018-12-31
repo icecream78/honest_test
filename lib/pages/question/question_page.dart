@@ -41,6 +41,7 @@ class QuestionPageState extends State<QuestionPage> {
   void answerSelectedHandler({@required Answers selectedAnswer}) {
     if (_currQuestionNum == _totalQuestionCount) {
       Navigator.pushReplacementNamed(context, '/finish');
+      return;
     }
 
     setState(() {
